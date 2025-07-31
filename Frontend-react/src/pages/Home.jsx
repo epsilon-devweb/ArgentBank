@@ -1,6 +1,14 @@
+import Summary from "../components/Summary";
+import Feature from "../components/Feature";
+import Footer from "../components/Footer";
+
 const Home = () => {
   return (
-    <p>Welcome to the Home Page</p>
+    <>
+      <Summary />
+      <Feature />
+      <Footer />
+    </>
   );
 };
 

@@ -1,5 +1,5 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import './assets/fontawesome/fontawesome';
 import Home from './pages/Home';
 import SignIn from './pages/SignIn';
 import User from './pages/User';

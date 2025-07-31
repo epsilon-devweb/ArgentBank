@@ -1,4 +1,5 @@
 import ArgentBankLogo from '../assets/img/argentBankLogo.webp';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const Nav = () => {
   return (
@@ -13,7 +14,7 @@ const Nav = () => {
       </a>
       <div>
         <a class="main-nav-item" href="./sign-in.html">
-          <i class="fa fa-user-circle"></i>
+          <FontAwesomeIcon icon={['fas', 'user-circle']} />
           Sign In
         </a>
       </div>
