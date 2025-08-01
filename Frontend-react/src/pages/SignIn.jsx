@@ -1,6 +1,8 @@
+import Form from '../components/Form';
+
 const SignIn = () => {
   return (
-    <p>Welcome to the Sign In Page</p>
+    <Form />
   );
 };
 
