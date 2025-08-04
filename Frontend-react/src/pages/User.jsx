@@ -1,6 +1,14 @@
+import Header from '../components/Header';
+import Account from '../components/Account';
+
 const User = () => {
   return (
-    <p>Welcome to the User Page</p>
+    <>
+    <main className="main bg-dark">
+      <Header />
+      <Account />
+    </main>
+    </>
   );
 };
 
