@@ -1,11 +1,11 @@
 import Summary from "../components/Summary";
-import Feature from "../components/Feature";
+import FeatureContainer from "../components/FeatureContainer";
 
 const Home = () => {
   return (
     <>
       <Summary />
-      <Feature />
+      <FeatureContainer />
     </>
   );
 };

@@ -2,38 +2,26 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
   user: null,
-  loading: false,
-  error: null,
-  success: false,
-  token: null,
-  isAuthenticated: false
+  token: localStorage.getItem('authToken') || null
 };
 
 const authSlice = createSlice({
   name: 'auth',
   initialState,
   reducers: {
-    signupStart: (state) => {
-      state.loading = true;
-      state.error = null;
+    setUser: (state, action) => {
+      state.user = action.payload;
     },
-    signupSuccess: (state, action) => {
-      state.loading = false;
-      state.user = action.payload.user; // Assuming your API returns { user: {...} }
-      state.token = action.payload.token; // If using JWT
-      state.isAuthenticated = true;
-      state.success = true;
+    setToken: (state, action) => {
+      state.token = action.payload.token;
+      localStorage.setItem('authToken', action.payload.token);
     },
-    signupFailure: (state, action) => {
-      state.loading = false;
-      state.error = action.payload;
-      state.isAuthenticated = false;
-    },
-    resetAuth: (state) => {
-      return initialState; // Reset to initial state
+    logout: (state, action) => {
+      state.user = null;
+      state.token = null;
     }
   }
 });
 
-export const { signupStart, signupSuccess, signupFailure, resetAuth } = authSlice.actions;
+export const { setUser, setToken, logout } = authSlice.actions;
 export default authSlice.reducer;

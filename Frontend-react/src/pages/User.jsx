@@ -1,12 +1,12 @@
-import Header from '../components/Header';
-import Account from '../components/Account';
+import InfoUser from '../components/InfoUser';
+import AccountContainer from '../components/AccountContainer';
 
 const User = () => {
   return (
     <>
     <main className="main bg-dark">
-      <Header />
-      <Account />
+      <InfoUser />
+      <AccountContainer />
     </main>
     </>
   );

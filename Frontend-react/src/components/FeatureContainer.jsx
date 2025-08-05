@@ -1,25 +1,9 @@
 import ChatLogo from '../assets/img/icon-chat.webp';
 import MoneyLogo from '../assets/img/icon-money.webp';
 import SecurityLogo from '../assets/img/icon-security.webp';
-import PropTypes from 'prop-types';
+import FeatureItem from '../components/FeatureItem';
 
-const FeatureItem = ({ icon, title, description }) => {
-  return (
-    <div className="feature-item">
-      <img src={icon} alt={`${title} Icon`} className="feature-icon" />
-      <h3 className="feature-item-title">{title}</h3>
-      <p>{description}</p>
-    </div>
-  );
-};
-
-FeatureItem.propTypes = {
-  icon: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired,
-};
-
-const Feature = () => {
+function FeatureContainer() {
   const features = [
     {
       icon: ChatLogo,
@@ -46,6 +30,6 @@ const Feature = () => {
       ))}
     </section>
   );
-};
+}
 
-export default Feature;
+export default FeatureContainer;
