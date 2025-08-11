@@ -1,9 +1,11 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { userLogin, userFetch } from '../api/userApi';
 import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 
 const LoginForm = () => {
     const dispatch = useDispatch();
+    const navigate = useNavigate();
     const handleSubmit = async (event) => {
         event.preventDefault();
         const formData = new FormData(event.target);
@@ -12,13 +14,12 @@ const LoginForm = () => {
             password: formData.get('password')
         }));
         if (token) {
-            await dispatch(userFetch(token));
-            window.location.replace('/user');
+            dispatch(userFetch(token));
+            navigate('/user');
         } else {
-            console.log('Identifiants incorrects');
+            alert('Identifiants incorrects');
         }
     }
-
     return (
         <main className="main bg-dark">
             <section className="sign-in-content">

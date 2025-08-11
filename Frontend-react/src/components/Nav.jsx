@@ -31,7 +31,7 @@ const Nav = () => {
       <div>
         <a className="main-nav-item" href={user && token ? '/user' : '/sign-in'}>
           <FontAwesomeIcon icon='user-circle' />
-          {user && token ? user.firstName : 'Sign In'}
+          {user && token ? user.userName : 'Sign In'}
         </a>
         {(user && token) && (
           <a className="main-nav-item" href="/" onClick={handleClick}>

@@ -1,9 +1,14 @@
 import LoginForm from '../components/LoginForm';
+import { Navigate } from 'react-router-dom';
 
 const SignIn = () => {
-  return (
-    <LoginForm />
-  );
+  if (localStorage.getItem('authToken')) {
+    return <Navigate to="/user"/>;
+  } else {
+    return (
+      <LoginForm />
+    );
+  }
 };
 
 export default SignIn;

@@ -1,4 +1,4 @@
-import { setUser, setToken } from "../store/features/auth/authSlice";
+import { setUser, setToken, setUsername } from "../store/features/auth/authSlice";
 
 const methods = {
   userLogin(user) {
@@ -32,7 +32,24 @@ const methods = {
         return response.body;
       }
     }
+  },
+  updateUsername(token, username) {
+    return async (dispatch, getState) => {
+      const request = await fetch('http://localhost:3001/api/v1/user/profile', {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${token}`
+        },
+        body: JSON.stringify({
+          'userName': username
+        })
+      });
+      const response = await request.json();
+      if (request.status === 200) dispatch(setUsername(username));
+      return request.status === 200;
+    }
   }
 }
 
-export const { userLogin, userFetch } = methods;
+export const { userLogin, userFetch, updateUsername } = methods;
