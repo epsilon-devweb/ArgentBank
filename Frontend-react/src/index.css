@@ -318,6 +318,40 @@ h1 {
   cursor: pointer;
 }
 
+.username-form input[readonly] {
+  background-color: #f0f0f0;
+  cursor: not-allowed;
+}
+
+.username-form .button-group {
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.username-form .btn {
+  width: 100%;
+}
+
+.username-form div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+  gap: 10px;
+}
+
+.username-form label {
+  margin-bottom: 3px;
+  font-weight: bold;
+}
+
+.username-form input {
+  padding: 8px;
+  box-sizing: border-box;
+}
+
 .header {
   color: #fff;
   margin-bottom: 2rem;
