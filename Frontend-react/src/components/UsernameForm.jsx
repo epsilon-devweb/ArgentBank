@@ -1,8 +1,8 @@
 import { useState } from 'react';
-import { updateUsername } from '../api/userApi';
 import { useSelector, useDispatch } from 'react-redux';
+import { updateUsername } from '../api/userApi';
 
-const UsernameForm = ({ firstName, lastName, onClose }) => {
+const UsernameForm = ({ onClose }) => {
     const dispatch = useDispatch();
     const { user, token } = useSelector((state) => state.auth);
     const [username, setUsername] = useState(user.userName);
@@ -31,7 +31,7 @@ const UsernameForm = ({ firstName, lastName, onClose }) => {
                 <input
                     type="text"
                     id="firstName"
-                    value={firstName || ''}
+                    value={user.firstName || ''}
                     readOnly
                 />
             </div>
@@ -40,7 +40,7 @@ const UsernameForm = ({ firstName, lastName, onClose }) => {
                 <input
                     type="text"
                     id="lastName"
-                    value={lastName || ''}
+                    value={user.lastName || ''}
                     readOnly
                 />
             </div>
